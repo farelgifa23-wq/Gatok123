@@ -2,27 +2,27 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Artikel MikroTik</title>
+<title>Artikel Lengkap MikroTik Networking</title>
 
 <style>
     body {
         margin: 0;
         background: linear-gradient(135deg, #000000, #001a00);
-        color: #e0ffe0;
+        color: #eaffea;
         font-family: "Segoe UI", Arial, sans-serif;
     }
 
     header {
         text-align: center;
-        padding: 40px 20px;
+        padding: 50px 20px;
         background: black;
-        border-bottom: 2px solid #00ff00;
+        border-bottom: 3px solid #00ff00;
     }
 
     header h1 {
-        font-size: 48px;
+        font-size: 52px;
         color: #00ff00;
-        text-shadow: 0 0 10px #00ff00;
+        text-shadow: 0 0 15px #00ff00;
         margin: 0;
         font-weight: bold;
     }
@@ -40,9 +40,9 @@
         padding-left: 100%;
         font-size: 22px;
         color: #00ff00;
-        animation: jalan 20s linear infinite;
+        animation: jalan 30s linear infinite;
         font-weight: bold;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
     }
 
     @keyframes jalan {
@@ -51,34 +51,34 @@
     }
 
     .content {
-        max-width: 900px;
-        margin: 40px auto;
-        padding: 30px;
-        background: rgba(0, 0, 0, 0.7);
-        border-radius: 15px;
-        box-shadow: 0 0 20px #00ff0044;
+        max-width: 1000px;
+        margin: 50px auto;
+        padding: 35px;
+        background: rgba(0, 0, 0, 0.8);
+        border-radius: 18px;
+        box-shadow: 0 0 30px #00ff0044;
     }
 
     .content h2 {
         color: #00ff00;
-        margin-top: 0;
-        font-size: 32px;
+        font-size: 34px;
+        margin-top: 40px;
     }
 
     .content p {
         font-size: 18px;
-        line-height: 1.8;
+        line-height: 2;
         text-align: justify;
     }
 
     .content ul {
         font-size: 18px;
-        line-height: 1.8;
+        line-height: 1.9;
     }
 
     footer {
         text-align: center;
-        padding: 20px;
+        padding: 25px;
         color: #00ff00;
         font-size: 14px;
         border-top: 1px solid #00ff00;
@@ -90,25 +90,142 @@
 <body>
 
 <header>
-    <h1>MIKROTIK NETWORKING</h1>
+    <h1>MIKROTIK NETWORKING SYSTEM</h1>
 </header>
 
 <div class="running">
-    <p>MIKROTIK • ROUTER • NETWORK • FIREWALL • BANDWIDTH • HOTSPOT • ADMIN JARINGAN</p>
+    <p>MIKROTIK • ROUTEROS • ROUTERBOARD • FIREWALL • BANDWIDTH • HOTSPOT • VPN • NETWORK ADMIN</p>
 </div>
 
 <div class="content">
-    <h2>Apa itu MikroTik?</h2>
-    <p>
-        MikroTik adalah sistem operasi berbasis Linux yang digunakan untuk mengelola jaringan komputer.
-        MikroTik sangat populer di kalangan administrator jaringan karena fiturnya yang lengkap,
-        ringan, dan mudah dikonfigurasi melalui Winbox maupun Terminal.
-    </p>
 
-    <h2>Fungsi Utama MikroTik</h2>
-    <ul>
-        <li>Routing jaringan</li>
-        <li>Manajemen bandwidth</li>
+<h2>1. Pengertian MikroTik</h2>
+<p>
+MikroTik adalah perusahaan teknologi jaringan yang berasal dari Latvia dan berdiri sejak tahun 1996.
+MikroTik dikenal sebagai pengembang sistem operasi jaringan bernama RouterOS dan perangkat keras jaringan
+bernama RouterBoard. Produk MikroTik digunakan secara luas di seluruh dunia, termasuk di Indonesia,
+karena menawarkan fitur jaringan yang sangat lengkap dengan harga yang relatif terjangkau.
+</p>
+
+<p>
+Dalam dunia jaringan komputer, MikroTik berperan sebagai router yang berfungsi mengatur lalu lintas data,
+menghubungkan beberapa jaringan, serta mengelola akses internet agar lebih aman, stabil, dan efisien.
+</p>
+
+<h2>2. RouterOS</h2>
+<p>
+RouterOS adalah sistem operasi berbasis Linux yang dikembangkan khusus untuk kebutuhan jaringan.
+Dengan RouterOS, sebuah komputer atau RouterBoard dapat difungsikan sebagai router profesional.
+RouterOS menyediakan berbagai fitur seperti routing, firewall, bandwidth management, VPN,
+wireless access point, hotspot, dan masih banyak lagi.
+</p>
+
+<p>
+RouterOS dapat diinstal pada PC (x86) maupun langsung digunakan pada perangkat RouterBoard.
+Sistem ini dapat dikonfigurasi melalui antarmuka grafis (Winbox), web browser, maupun command line interface (CLI).
+</p>
+
+<h2>3. RouterBoard</h2>
+<p>
+RouterBoard adalah perangkat keras buatan MikroTik yang telah dilengkapi RouterOS.
+RouterBoard dirancang khusus untuk keperluan jaringan sehingga lebih stabil dan hemat daya.
+Perangkat ini tersedia dalam berbagai tipe dan spesifikasi, mulai dari skala kecil hingga enterprise.
+</p>
+
+<h2>4. Fungsi Utama MikroTik</h2>
+<ul>
+    <li>Sebagai router untuk menghubungkan jaringan lokal dan internet</li>
+    <li>Mengatur pembagian bandwidth agar adil</li>
+    <li>Menyediakan sistem keamanan jaringan (firewall)</li>
+    <li>Mengelola akses internet melalui hotspot</li>
+    <li>Mendukung VPN untuk koneksi jarak jauh</li>
+    <li>Load balancing dan failover koneksi</li>
+</ul>
+
+<h2>5. Routing pada MikroTik</h2>
+<p>
+Routing adalah proses pengiriman data dari satu jaringan ke jaringan lain.
+MikroTik mendukung routing statis dan dinamis seperti RIP, OSPF, dan BGP.
+Fitur ini sangat penting dalam jaringan berskala besar seperti ISP dan perusahaan.
+</p>
+
+<h2>6. Manajemen Bandwidth</h2>
+<p>
+Manajemen bandwidth adalah salah satu keunggulan utama MikroTik.
+Dengan fitur seperti Simple Queue dan Queue Tree, administrator jaringan
+dapat membatasi kecepatan upload dan download setiap pengguna.
+Tujuannya agar jaringan tetap stabil dan tidak terjadi monopoli bandwidth.
+</p>
+
+<h2>7. Firewall dan Keamanan Jaringan</h2>
+<p>
+Firewall MikroTik berfungsi untuk melindungi jaringan dari akses yang tidak sah.
+Administrator dapat memfilter trafik berdasarkan IP address, port, protocol,
+dan berbagai parameter lainnya. Firewall juga dapat digunakan untuk memblokir
+situs tertentu serta mencegah serangan siber.
+</p>
+
+<h2>8. Hotspot MikroTik</h2>
+<p>
+Hotspot adalah fitur yang memungkinkan pengguna harus login terlebih dahulu
+sebelum mengakses internet. Fitur ini sering digunakan di sekolah, kampus,
+cafe, dan tempat umum lainnya. MikroTik menyediakan sistem manajemen user,
+voucher, dan monitoring aktivitas pengguna.
+</p>
+
+<h2>9. VPN (Virtual Private Network)</h2>
+<p>
+MikroTik mendukung berbagai jenis VPN seperti PPTP, L2TP, SSTP, dan OpenVPN.
+VPN digunakan untuk menghubungkan jaringan dari lokasi berbeda secara aman
+melalui internet. Data yang dikirim melalui VPN akan dienkripsi sehingga
+lebih aman dari penyadapan.
+</p>
+
+<h2>10. Load Balancing dan Failover</h2>
+<p>
+Load balancing berfungsi untuk membagi beban trafik ke beberapa koneksi internet.
+Sedangkan failover berfungsi sebagai cadangan jika salah satu koneksi terputus.
+Dengan fitur ini, koneksi internet menjadi lebih stabil dan minim downtime.
+</p>
+
+<h2>11. Kelebihan MikroTik</h2>
+<ul>
+    <li>Harga terjangkau</li>
+    <li>Fitur jaringan sangat lengkap</li>
+    <li>Stabil dan ringan</li>
+    <li>Mendukung GUI dan CLI</li>
+    <li>Banyak digunakan di dunia kerja</li>
+</ul>
+
+<h2>12. Kekurangan MikroTik</h2>
+<ul>
+    <li>Kurva belajar cukup tinggi untuk pemula</li>
+    <li>Perlu pemahaman dasar jaringan</li>
+</ul>
+
+<h2>13. MikroTik dalam Dunia Pendidikan</h2>
+<p>
+MikroTik sangat populer di jurusan TKJ dan RPL karena banyak digunakan
+dalam praktik jaringan. Menguasai MikroTik memberikan nilai tambah
+bagi siswa saat memasuki dunia kerja atau industri IT.
+</p>
+
+<h2>14. Kesimpulan</h2>
+<p>
+MikroTik adalah solusi jaringan yang sangat powerful dan fleksibel.
+Dengan fitur lengkap dan harga terjangkau, MikroTik menjadi pilihan
+utama dalam membangun jaringan komputer yang aman, stabil, dan efisien.
+Penguasaan MikroTik merupakan keahlian penting di bidang IT dan networking.
+</p>
+
+</div>
+
+<footer>
+    © 2026 | Artikel MikroTik Super Lengkap | by Farel
+</footer>
+
+</body>
+</html>        <li>Manajemen bandwidth</li>
         <li>Firewall dan keamanan jaringan</li>
         <li>Hotspot dan autentikasi user</li>
         <li>Load balancing dan failover</li>
